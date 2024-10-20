@@ -1,4 +1,5 @@
 <?php
+session_start();
 include ('db_connection.php'); // Votre fichier de configuration de base de données
 
 try {
@@ -10,7 +11,7 @@ try {
 
         // Validation simple
         if (empty($nom) || empty($prenom) || empty($email) || empty($motdepasse)) {
-            echo json_encode(['success' => false, 'message' => 'Tous les champs sont obligatoires.']);
+            echo 'Tous les champs sont obligatoires.';
             exit;
         }
 
@@ -23,10 +24,12 @@ try {
             ':motdepasse' => $motdepasse,
         ]);
 
-        echo json_encode(['success' => true]);
+        // Rediriger vers une page de confirmation
+        header('Location: confirmation.php?message=votre compte a bien été créé');
+        exit;
     } else {
-        echo json_encode(['success' => false, 'message' => 'Requête non valide.']);
+        echo 'Requête non valide.';
     }
 } catch (Exception $e) {
-    echo json_encode(['success' => false, 'message' => 'Erreur du serveur: ' . $e->getMessage()]);
+    echo 'Erreur du serveur: ' . $e->getMessage();
 }

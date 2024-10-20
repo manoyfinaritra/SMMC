@@ -39,7 +39,6 @@ body {
 
 main.table {
     width: 82vw;
-    height: 90vh;
     background-color: #fff5;
 
     backdrop-filter: blur(7px);

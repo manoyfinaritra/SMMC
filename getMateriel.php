@@ -1,8 +1,5 @@
 <?php
-$dsn = 'mysql:host=localhost:3307;dbname=port_toamasina';
-$username = 'root';
-$password = 'manoynan';
-
+include ('db_connection.php');
 try {
     $pdo = new PDO($dsn, $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -18,4 +15,3 @@ try {
 } catch (PDOException $e) {
     echo "Erreur : " . $e->getMessage();
 }
-

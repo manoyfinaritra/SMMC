@@ -1,23 +1,18 @@
 <?php
-$dsn = 'mysql:host=localhost:3307;dbname=port_toamasina';
-$username = 'root';
-$password = 'manoynan';
-
+include('db_connection.php');
 try {
-    $pdo = new PDO($dsn, $username, $password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $stmt = $pdo->query("SELECT * FROM equipements");
+	$stmt = $pdo->query("SELECT * FROM equipements");
 
-    echo '<table id="table">';
-    echo '<thead><tr><th>ID</th><th>Article</th><th>Date</th><th>Marque</th><th>Modèle</th><th>Processeur</th><th>RAM</th><th>État<span class="icon-arrow">&UpArrow;</span></th><th>Établissement</th><th>Actions</th></tr></thead>
+	echo '<table id="table">';
+	echo '<thead><tr><th>ID</th><th>Article</th><th>Date</th><th>Marque</th><th>Modèle</th><th>Processeur</th><th>RAM</th><th>État<span class="icon-arrow">&UpArrow;</span></th><th>Établissement</th><th>Actions</th></tr></thead>
     <tbody style="background-color: transparent;">';
-    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-        echo '<tr>';
-        foreach ($row as $key => $col) {
-            echo "<td>{$col}</td>";
-        }
-        echo '<td>
+	while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+		echo '<tr>';
+		foreach ($row as $key => $col) {
+			echo "<td>{$col}</td>";
+		}
+		echo '<td>
                 <button 
                 class="btn btn-danger btn-sm delete-btn" data-id="' . $row['id'] . '">
                 <svg xmlns="http://www.w3.org/2000/svg" style="margin-right: 4px;" width="14" height="14" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
@@ -33,9 +28,9 @@ try {
                 </svg>
                 </button>
               </td>';
-        echo '</tr>';
-    }
-    echo '</tbody></table>';
+		echo '</tr>';
+	}
+	echo '</tbody></table>';
 } catch (PDOException $e) {
-    echo "Erreur : " . $e->getMessage();
+	echo "Erreur : " . $e->getMessage();
 }
