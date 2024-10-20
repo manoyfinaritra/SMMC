@@ -293,14 +293,6 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 			}
 		}
 
-		/* theme preloader */
-
-
-		/*@page {
-    size: landscape;
-    margin: 0; 
-}*/
-
 		body {
 			min-height: 100vh;
 			/* background: url(images/html_table.jpg) center / cover; */

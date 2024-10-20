@@ -1,12 +1,10 @@
 <?php
 session_start();
 include('db_connection.php');
-// Vérifier si l'utilisateur est connecté
 if (!isset($_SESSION['user_id'])) {
-    // Rediriger vers la page de connexion s'il n'est pas connecté
     header("Location: index.php");
     exit();
-} // Le reste de votre code sécurisé...
+} 
 $user_email = $_SESSION['user_email'];
 ?>
 <!DOCTYPE html>
@@ -294,17 +292,8 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             }
         }
 
-        /* theme preloader */
-
-
-        /*@page {
-    size: landscape;
-    margin: 0; 
-}*/
-
         body {
             min-height: 100vh;
-            /* background: url(images/html_table.jpg) center / cover; */
             background-color: #eee;
         }
 
@@ -745,8 +734,9 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             background-color: #f1f1f1;
 
         }
-        @media  (max-width: 956px) {
-            .gri{
+
+        @media (max-width: 956px) {
+            .gri {
                 margin-top: 140px !important;
             }
         }

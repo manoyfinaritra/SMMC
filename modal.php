@@ -159,7 +159,7 @@
 
                     <div class="col-md-6">
                         <label for="edit_etat" class="form-label">Etat</label>
-                        <!-- <input class="form-control" id="edit_etat" name="etat"> -->
+                      
                         <select class="form-select" id="edit_etat" name="etat" style="background: #ddd7d7;
                                                                                                    border-radius: 10px;">
                             <option selected disabled>selectionner</option>
@@ -169,7 +169,7 @@
                     </div>
                     <div class="col-md-6">
                         <label for="edit_etablissement" class="form-label">Etablissement</label>
-                        <!-- <input type="text" id="edit_etablissement" name="etablissement"> -->
+                        
                         <select class="form-select" id="edit_etablissement" name="etablissement" style="background: #ddd7d7;
                                                                                                    border-radius: 10px;">
                             <option selected disabled>selectionner</option>
@@ -197,39 +197,3 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<!-- <script>
-    $(document).ready(function() {
-        $("#materielForm").submit(function(event) {
-            event.preventDefault(); // Empêche le rechargement de la page
-
-            var formData = $(this).serialize(); // Récupère les données du formulaire
-
-            $.ajax({
-                type: "POST",
-                url: "iventaire.php", // Cible le script PHP
-                data: formData,
-                success: function(response) {
-                    Swal.fire({
-                        title: 'Succès!',
-                        text: response,
-                        icon: 'success',
-                        confirmButtonText: 'OK'
-                    });
-
-                    // Réinitialiser le formulaire après succès
-                    $('#materielForm')[0].reset();
-                    // Fermer le modal
-                    $('#exampleModal').modal('hide');
-                },
-                error: function() {
-                    Swal.fire({
-                        title: 'Erreur!',
-                        text: 'Un problème est survenu lors de l\'enregistrement',
-                        icon: 'error',
-                        confirmButtonText: 'OK'
-                    });
-                }
-            });
-        });
-    });
-</script> -->
